@@ -1,7 +1,3 @@
-Absolutely! Here's a clean and copy-ready version of your `README.md` content for your GitHub portfolio repository:
-
----
-
 # 🎨 Personal Portfolio Website
 
 This repository contains the source code for my personal portfolio website, showcasing multimedia projects, graphic designs, 3D models, and interactive development work using the Unity game engine. The website is built using standard web technologies: **HTML**, **CSS**, and **vanilla JavaScript**.
