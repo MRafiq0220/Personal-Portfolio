@@ -1,44 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Personal Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>My Portfolio</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <section class="intro">
-      <h2>Welcome to My Blog</h2>
-      <p>This is where I share my thoughts, experiences, and projects. Stay tuned for more posts!</p>
-    </section>
+    <header>
+        <div class="container">
+            <h1 class="logo">My<span style="color: #facc15;">Portfolio.</span></h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="my_works.html">My Works</a></li> </ul>
+            </nav>
+        </div>
+    </header>
 
-    <section class="blog-preview">
-      <h3>Recent Posts</h3>
-      <div class="post">
-        <h4>📝 Getting Started with HTML & CSS</h4>
-        <p>Learn how to structure your first webpage and style it beautifully.</p>
-        <a href="#">Read More</a>
-      </div>
-    </section>
-  </main>
+    <main class="container">
+        <section class="intro">
+            <h2>Welcome to My Portfolio</h2>
+            <p>This is where I showcase my creative projects, designs, and development work. Explore my journey and creations below!</p>
+        </section>
 
-  <footer>
-    <p>© 2025 Mohamad Rafiq Bin Roznan — Personal Portfolio</p>
-  </footer>
+        <section class="portfolio-preview">
+            <h2>Recent Projects</h2>
+            
+            <div class="project-item">
+                <h3>Project Title 1: Interactive Unity Game</h3>
+                <p class="project-description">
+                    This project involved developing a small interactive game using the Unity game engine. It features custom 3D models and basic gameplay mechanics, demonstrating my skills in game design and interactive development.
+                </p>
+                <div class="project-images">
+                    <img src="images/project1-img1.jpg" alt="Project 1 Screenshot 1">
+                    <img src="images/project1-img2.jpg" alt="Project 1 Screenshot 2">
+                    </div>
+                <a href="#" class="project-link">View Project Details</a>
+            </div>
 
-  <script src="js/main.js"></script>
+            <div class="project-item">
+                <h3>Project Title 2: Graphic Design Showcase</h3>
+                <p class="project-description">
+                    A collection of various graphic design works, including logos, posters, and digital illustrations. This project highlights my creativity and proficiency in design software like Adobe Photoshop and Illustrator.
+                </p>
+                <div class="project-images">
+                    <img src="images/project2-img1.jpg" alt="Project 2 Design 1">
+                    <img src="images/project2-img2.jpg" alt="Project 2 Design 2">
+                    </div>
+                <a href="#" class="project-link">View Project Details</a>
+            </div>
+
+            </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Mohamad Rafiq Bin Roznan — Personal Portfolio</p>
+    </footer>
+
 </body>
 </html>

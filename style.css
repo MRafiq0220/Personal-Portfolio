@@ -8,12 +8,12 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
+    background-color: #d6eff7; /* Light blue background */
     color: #333;
     /* Sticky Footer properties */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures body takes at least the full viewport height */
+    min-height: 100vh;
 }
 
 /* --- Utility Classes --- */
@@ -21,7 +21,7 @@ body {
     width: 90%;
     max-width: 960px;
     margin: auto;
-    padding: 0 0;
+    padding: 0 20px; /* Added 20px horizontal padding for general gap around container content */
 }
 
 /* --- Header Styles --- */
@@ -35,7 +35,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 20px; /* This was already here and is good for header content */
 }
 
 header h1 {
@@ -45,7 +45,6 @@ header h1 {
 }
 
 header .logo {
-    /* font-size: 1.8rem; */ /* Removed to inherit from header h1 */
     margin: 0;
 }
 
@@ -65,32 +64,32 @@ nav ul li {
 
 nav a {
     color: white;
-    text-decoration: none; /* Ensure no underline by default */
+    text-decoration: none;
     font-weight: bold;
     padding: 5px 10px;
     border-radius: 5px;
     display: inline-block;
-    transition: background-color 0.3s ease; /* Smooth transition for background */
+    transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle white (greyish) overlay on hover */
-    text-decoration: none; /* Ensure no underline on hover */
-    cursor: pointer; /* Indicate interactivity */
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    cursor: pointer;
 }
 
 nav a.active {
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly more prominent white (greyish) background for active page */
-    text-decoration: none; /* No underline for active state */
+    background-color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
 }
 
 nav a:active {
-    background-color: rgba(255, 255, 255, 0.3); /* Darker white (greyish) overlay when clicked */
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 /* --- Main Content Area --- */
 main {
-    padding: 0;
+    padding: 0; /* The .container class applied to main handles padding now */
     flex-grow: 1; /* Allows main content to take up remaining vertical space for sticky footer */
 }
 
@@ -100,14 +99,13 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 20px;
-    background-color: #fff; /* Changed background to white */
-    color: #333; /* Changed text color for readability on white */
-    border-radius: 8px; /* Added for consistency with home page sections */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Added for consistency */
-    /* If this section is inside a .container, its width will be limited.
-       To make it span full width with this white background, it needs to be directly
-       inside <main> and have a nested .container for its content. */
+    padding: 60px 50px; /* Increased horizontal (left/right) internal padding to 50px */
+    background-color: #fff;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 40px; /* Gap from header for About page */
+    margin-bottom: 40px; /* Added consistent bottom gap for the panel */
 }
 
 .about-text {
@@ -117,7 +115,7 @@ main {
 }
 
 .greeting {
-    color: #facc15; /* Yellow will still stand out on white */
+    color: #0056b3; /* Changed 'Hello, Welcome' to a suitable blue */
     font-size: 1.1rem;
     margin-bottom: 10px;
 }
@@ -131,23 +129,60 @@ main {
 .bio {
     font-size: 1rem;
     line-height: 1.6;
-    color: #555; /* Changed to a darker color for readability on white background */
+    color: #555;
     margin-bottom: 20px;
 }
 
-.btn-yellow {
-    display: inline-block;
-    background-color: #facc15;
-    color: #000;
-    padding: 10px 20px;
+/* Ensure strong text inside .bio is bold */
+.bio strong {
     font-weight: bold;
-    text-decoration: none; /* Ensure no underline */
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
-.btn-yellow:hover {
-    background-color: #eab308;
+/* Styles for the phone number and flag */
+.contact-number {
+    margin-top: 20px; /* Provides a gap above the phone number */
+    margin-bottom: 20px; /* Provides a gap below the phone number before social icons */
+    display: flex;
+    align-items: center; /* Vertically align the flag and text */
+    font-size: 1.1rem; /* Make the phone number text a bit larger */
+    font-weight: bold;
+    color: #333; /* Default text color */
+}
+
+.contact-number .phone-link {
+    text-decoration: none; /* Remove underline from the link */
+    color: #0056b3; /* Make the phone number text blue like other links */
+    display: flex;
+    align-items: center; /* Align items within the link */
+    gap: 8px; /* Space between the flag and the number */
+}
+
+.contact-number .phone-link:hover {
+    text-decoration: underline; /* Add underline on hover for interaction cue */
+}
+
+.flag-icon {
+    width: 28px; /* Adjust flag size as needed */
+    height: auto;
+    vertical-align: middle; /* Align with text baseline */
+}
+
+/* Social Icons Styles */
+.social-icons {
+    margin-top: 20px; /* Gap between button and social icons */
+    display: flex; /* Arranges icons in a row */
+    gap: 15px; /* Space between icons */
+    align-items: center; /* Vertically aligns icons */
+}
+
+.social-icon {
+    width: 30px; /* Size of the social icon images */
+    height: 30px;
+    transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Slightly enlarges icon on hover */
 }
 
 .about-image {
@@ -162,9 +197,9 @@ main {
 .about-image img {
     width: 100%;
     max-width: 350px;
-    height: auto;
+    height: 300px; /* Adjusted height for the profile image */
     border-radius: 20px;
-    object-fit: cover;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
 /* --- General Section Styles (for other pages like index.html) --- */
@@ -177,6 +212,72 @@ main {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* NEW: Portfolio Projects Section Styles (replaces blog-preview) */
+.portfolio-preview {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.portfolio-preview h2 {
+    margin-bottom: 20px; /* Space below the section title */
+    color: #004080;
+    font-size: 1.8rem;
+}
+
+.project-item {
+    border: 1px solid #eee;
+    padding: 20px;
+    margin-top: 20px; /* Gap between project items */
+    border-radius: 5px;
+    background-color: #fcfcfc;
+}
+
+.project-item h3 {
+    margin-bottom: 10px;
+    color: #004080;
+    font-size: 1.5rem;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px; /* Space between description and images */
+}
+
+.project-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid for images */
+    gap: 10px; /* Space between images */
+    margin-bottom: 15px; /* Space below images before the link */
+}
+
+.project-images img {
+    width: 100%;
+    height: 120px; /* Fixed height for thumbnails */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+    color: #003366;
+}
+
+/* REMOVED: Old blog-preview specific styles */
+/*
 .blog-preview {
     margin-bottom: 30px;
     padding: 20px;
@@ -207,13 +308,14 @@ main {
     display: inline-block;
     margin-top: 10px;
     color: #0056b3;
-    text-decoration: none; /* Ensure no underline */
+    text-decoration: none;
     font-weight: bold;
 }
 
 .blog-preview .post a:hover {
-    text-decoration: none; /* No underline on hover */
+    text-decoration: none;
 }
+*/
 
 /* --- Footer Styles --- */
 footer {
@@ -242,7 +344,7 @@ footer {
 
     .about-section {
         flex-direction: column;
-        padding: 40px 20px;
+        padding: 40px 20px; /* Adjusted padding for smaller screens */
     }
 
     .about-text {
@@ -260,6 +362,12 @@ footer {
 
     .about-image img {
         max-width: 280px;
+        height: 250px; /* Adjusted height for smaller screens */
+    }
+
+    /* Adjust project images for smaller screens if needed */
+    .project-images {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Smaller images on mobile */
     }
 }
 
@@ -280,8 +388,89 @@ footer {
         font-size: 0.9rem;
     }
 
-    .btn-yellow {
-        padding: 8px 15px;
-        font-size: 0.9rem;
+    .about-image img {
+        height: 200px; /* Further adjusted height for very small screens */
+    }
+
+    .portfolio-preview h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-item h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Styles for the new portfolio gallery (if you added it to index.html) */
+/* Note: The new .portfolio-preview and .project-item classes are serving a similar purpose to the old .portfolio-gallery and .gallery-item.
+   You might want to merge these or decide which naming convention you prefer and use consistently.
+   For now, I'm keeping .portfolio-gallery as a separate example, assuming it might be a different, dedicated gallery page or section.
+   If you intend for "Recent Projects" to *be* the gallery, you can remove .portfolio-gallery and its related styles. */
+
+.portfolio-gallery { /* This seems to be an old section or a duplicate idea, consider removing if .portfolio-preview is enough */
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.portfolio-gallery h3 {
+    margin-bottom: 25px;
+    color: #004080;
+    font-size: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.gallery-item {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Adjust as needed for gallery thumbnails */
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.gallery-item p {
+    padding: 15px 10px;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.gallery-item a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit color from parent */
+    display: block; /* Make the whole item clickable */
+}
+
+.gallery-item a:hover p {
+    color: #0056b3; /* Change text color on hover */
+}
+
+/* Responsive adjustments for gallery */
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Stack items on small screens */
     }
 }
