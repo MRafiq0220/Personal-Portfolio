@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sejahtera Clinic Management System</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                font-family: 'Arial', sans-serif;
+                background-color: #e9f7ef; /* Light green background */
+            }
+            .hero {
+                height: 100vh;
+                background: #28a745; /* Green background */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                color: #fff;
+            }
+            .hero h1 {
+                font-size: 4em;
+                margin: 0.5em 0;
+            }
+            .hero p {
+                font-size: 1.5em;
+                margin: 0.5em 0;
+            }
+            .hero .buttons {
+                margin-top: 1em;
+            }
+            .hero button {
+                padding: 0.7em 2em;
+                font-size: 1em;
+                border: none;
+                border-radius: 5px;
+                background-color: #007bff;
+                color: #fff;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                margin: 0.5em;
+            }
+            .hero button:hover {
+                background-color: #0056b3;
+            }
+            .features {
+                display: flex;
+                justify-content: space-around;
+                padding: 2em 0;
+                background-color: #fff;
+            }
+            .feature {
+                text-align: center;
+                width: 25%;
+            }
+            .feature i {
+                font-size: 3em;
+                color: #28a745; /* Green icons */
+            }
+            .feature h3 {
+                margin: 1em 0 0.5em;
+                font-size: 1.5em;
+            }
+            .feature p {
+                color: #666;
+            }
+            .contact {
+                padding: 2em;
+                text-align: center;
+                background-color: #28a745; /* Green background */
+                color: #fff;
+            }
+            .contact h2 {
+                margin-bottom: 0.5em;
+            }
+            .contact p {
+                margin: 0.5em 0;
+            }
+            .contact form {
+                margin-top: 1em;
+            }
+            .contact input[type="text"], .contact input[type="email"], .contact textarea {
+                width: 100%;
+                padding: 0.7em;
+                margin: 0.5em 0;
+                border: none;
+                border-radius: 5px;
+            }
+            .contact input[type="submit"] {
+                padding: 0.7em 2em;
+                font-size: 1em;
+                border: none;
+                border-radius: 5px;
+                background-color: #0056b3;
+                color: #fff;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            .contact input[type="submit"]:hover {
+                background-color: #003f7f;
+            }
+            footer {
+                text-align: center;
+                padding: 1em 0;
+                background-color: #333;
+                color: #fff;
+            }
+            footer p {
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="hero">
+            <h1>Sejahtera Clinic Management System</h1>
+            <p>Empowering our clinic personnel with effective and dependable administrative resources</p>
+
+            <div class="buttons">
+                <button onclick="document.location.href = 'login.html'">Login</button>
+                <button onclick="document.location.href = 'register.jsp'">Register</button>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-user-md"></i>
+                <h3>Expert Doctors</h3>
+                <p>Our team of expert doctors are here to provide you with the best care.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-procedures"></i>
+                <h3>Advanced Equipment</h3>
+                <p>We use the latest medical technology for accurate diagnosis and treatment.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-ambulance"></i>
+                <h3>24/7 Emergency</h3>
+                <p>Our emergency services are available round the clock to assist you.</p>
+            </div>
+        </div>
+
+
+
+
+        <footer>
+            <p>&copy; 2024 Clinic Management System. All rights reserved.</p>
+        </footer>
+
+    </body>
+</html>
