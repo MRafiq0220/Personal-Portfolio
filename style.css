@@ -144,45 +144,45 @@ main {
     margin-bottom: 20px; /* Provides a gap below the phone number before social icons */
     display: flex;
     align-items: center; /* Vertically align the flag and text */
-    font-size: 1.1rem; /* Make the phone number text a bit larger */
+    font-size: 1.1rem;
     font-weight: bold;
-    color: #333; /* Default text color */
+    color: #333;
 }
 
 .contact-number .phone-link {
-    text-decoration: none; /* Remove underline from the link */
-    color: #0056b3; /* Make the phone number text blue like other links */
+    text-decoration: none;
+    color: #0056b3;
     display: flex;
-    align-items: center; /* Align items within the link */
-    gap: 8px; /* Space between the flag and the number */
+    align-items: center;
+    gap: 8px;
 }
 
 .contact-number .phone-link:hover {
-    text-decoration: underline; /* Add underline on hover for interaction cue */
+    text-decoration: underline;
 }
 
 .flag-icon {
-    width: 28px; /* Adjust flag size as needed */
+    width: 28px;
     height: auto;
-    vertical-align: middle; /* Align with text baseline */
+    vertical-align: middle;
 }
 
 /* Social Icons Styles */
 .social-icons {
-    margin-top: 20px; /* Gap between button and social icons */
-    display: flex; /* Arranges icons in a row */
-    gap: 15px; /* Space between icons */
-    align-items: center; /* Vertically aligns icons */
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
 .social-icon {
-    width: 30px; /* Size of the social icon images */
+    width: 30px;
     height: 30px;
-    transition: transform 0.2s ease; /* Smooth hover effect */
+    transition: transform 0.2s ease;
 }
 
 .social-icon:hover {
-    transform: scale(1.1); /* Slightly enlarges icon on hover */
+    transform: scale(1.1);
 }
 
 .about-image {
@@ -197,21 +197,117 @@ main {
 .about-image img {
     width: 100%;
     max-width: 350px;
-    height: 300px; /* Adjusted height for the profile image */
+    height: 300px;
     border-radius: 20px;
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    object-fit: cover;
 }
 
-/* --- General Section Styles (for other pages like index.html and now my_works.html) --- */
+/* --- General Section Styles (for index.html and my_works.html) --- */
 .intro {
-    margin-top: 40px; /* Gap between header and "Welcome to My Blog" */
+    margin-top: 40px;
     margin-bottom: 30px;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center; /* This will center the text within the .intro section */
+    text-align: center;
 }
+
+/* NEW: Highlight Images Section Styling */
+.highlight-images-section {
+    margin-bottom: 30px; /* Consistent spacing */
+    padding: 20px;
+    background-color: #fff; /* White panel style */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center; /* Center heading and description */
+}
+
+.highlight-images-section h2 {
+    margin-bottom: 10px;
+    color: #004080;
+    font-size: 1.8rem;
+}
+
+.highlight-images-section .section-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 25px; /* Space between description and image grid */
+}
+
+.highlight-image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 2 columns on larger screens, 1 on small */
+    gap: 20px; /* Space between images */
+    justify-content: center; /* Center the grid items if there are less than full columns */
+}
+
+.highlight-image-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image corners are rounded */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.highlight-image-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.highlight-image-item img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistent look */
+    object-fit: cover; /* Ensures images fill the space, cropping as needed */
+    display: block; /* Remove extra space below image */
+}
+
+
+/* Visual Archive Section Styling */
+.visual-archive-section {
+    margin-bottom: 30px; /* Consistent spacing with other sections */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.visual-archive-section h2 {
+    margin-bottom: 20px;
+    color: #004080;
+    font-size: 1.8rem;
+}
+
+.visual-archive-section .image-container {
+    /* Basic styling for the blank container for future images */
+    min-height: 200px; /* Give it some height so it's visible */
+    border: 2px dashed #ccc; /* Dashed border to indicate it's empty */
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    font-style: italic;
+    font-size: 1.1rem;
+    background-color: #f9f9f9;
+}
+
+/* Remove the placeholder styling from .image-container::before if you added it previously */
+.visual-archive-section .image-container::before {
+    content: none; /* Remove the "Your visual content goes here" text */
+}
+
+/* If you add actual images, you can apply similar styling to .highlight-image-grid
+   or create specific rules for images within .visual-archive-section .image-container */
+.visual-archive-section .image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px; /* Example styling for images placed here later */
+}
+
 
 /* Portfolio Projects Section Styles (applies to index.html and my_works.html) */
 .portfolio-preview {
@@ -223,7 +319,7 @@ main {
 }
 
 .portfolio-preview h2 {
-    margin-bottom: 20px; /* Space below the section title */
+    margin-bottom: 20px;
     color: #004080;
     font-size: 1.8rem;
 }
@@ -231,7 +327,7 @@ main {
 .project-item {
     border: 1px solid #eee;
     padding: 20px;
-    margin-top: 20px; /* Gap between project items */
+    margin-top: 20px;
     border-radius: 5px;
     background-color: #fcfcfc;
 }
@@ -245,69 +341,70 @@ main {
 .project-description {
     font-size: 1rem;
     color: #555;
-    margin-bottom: 15px; /* Space between description and images */
+    margin-bottom: 15px;
 }
 
 .project-images {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid for images */
-    gap: 10px; /* Space between images */
-    margin-bottom: 15px; /* Space below images before the link/button */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
 .project-images img {
     width: 100%;
-    height: 300px; /* Increased height for project images */
-    object-fit: cover; /* Ensures images cover the area without distortion */
+    height: 300px;
+    object-fit: cover;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-/* Styling for the "View Project Details" button on index.html */
+/* Styling for the "View Project Details" link on index.html (like a button) */
 .project-link.btn-blue {
-    display: inline-block; /* Make it behave like a block for padding/margin but inline with text flow */
-    background-color: #0056b3; /* A nice blue color */
+    display: inline-block;
+    background-color: #0056b3;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: bold; /* Make it bold */
-    margin-top: 15px; /* Add some space above */
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .project-link.btn-blue:hover {
-    background-color: #004080; /* Darker blue on hover */
+    background-color: #004080;
+    transform: translateY(-2px);
 }
 
 
-/* NEW: See More/See Less Button Styles (for my_works.html) */
+/* See More/See Less Button Styles (for my_works.html) */
 .project-toggle-btn {
-    background-color: #facc15; /* Yellow like your accent color */
-    color: #004080; /* Dark blue text */
+    background-color: #facc15;
+    color: #004080;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
-    margin-top: 15px; /* Space above the button */
+    margin-top: 15px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block; /* Allows margin-top/bottom and centers with text-align:center if parent is centered */
+    display: inline-block;
 }
 
 .project-toggle-btn:hover {
-    background-color: #e5b800; /* Slightly darker yellow on hover */
+    background-color: #e5b800;
     transform: translateY(-2px);
 }
 
-/* NEW: Hidden Project Details Section */
+/* Hidden Project Details Section */
 .project-details {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px dashed #eee; /* Dotted line to separate */
-    text-align: left; /* Align text within details to left */
-    animation: fadeIn 0.5s ease-out; /* Smooth fade-in effect */
+    border-top: 1px dashed #eee;
+    text-align: left;
+    animation: fadeIn 0.5s ease-out;
 }
 
 .project-details.hidden {
@@ -327,7 +424,7 @@ main {
 }
 
 .project-details ul {
-    list-style: disc; /* Bullet points for lists */
+    list-style: disc;
     margin-left: 20px;
     margin-bottom: 15px;
 }
@@ -339,7 +436,7 @@ main {
 }
 
 .download-list li a {
-    color: #0056b3; /* Blue for download links */
+    color: #0056b3;
     text-decoration: none;
     font-weight: bold;
 }
@@ -348,7 +445,7 @@ main {
     text-decoration: underline;
 }
 
-/* NEW: Fade-in animation for project details */
+/* Fade-in animation for project details */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -382,7 +479,7 @@ footer {
 
     .about-section {
         flex-direction: column;
-        padding: 40px 20px; /* Adjusted padding for smaller screens */
+        padding: 40px 20px;
     }
 
     .about-text {
@@ -400,17 +497,28 @@ footer {
 
     .about-image img {
         max-width: 280px;
-        height: 250px; /* Adjusted height for smaller screens */
+        height: 250px;
     }
 
-    /* Adjust project images for smaller screens if needed */
     .project-images {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Smaller images on mobile */
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
 
-    /* .my-works-section is now handled by .portfolio-preview and .intro */
     .portfolio-preview {
-        padding: 20px 15px; /* Adjust padding for portfolio-preview on smaller screens */
+        padding: 20px 15px;
+    }
+
+    .visual-archive-section {
+        padding: 20px 15px;
+    }
+
+    /* Responsive for new highlight images grid */
+    .highlight-image-grid {
+        grid-template-columns: 1fr; /* Stack images on small screens */
+    }
+
+    .highlight-image-item img {
+        height: 180px; /* Adjust height for smaller screens */
     }
 }
 
@@ -432,7 +540,7 @@ footer {
     }
 
     .about-image img {
-        height: 200px; /* Further adjusted height for very small screens */
+        height: 200px;
     }
 
     .portfolio-preview h2 {
@@ -443,7 +551,6 @@ footer {
         font-size: 1.3rem;
     }
 
-    /* .my-works-section is now handled by .portfolio-preview and .intro */
     .intro h2 {
         font-size: 1.8rem;
     }
@@ -452,5 +559,17 @@ footer {
         font-size: 1rem;
     }
 
-    /* Responsive adjustments for gallery are no longer needed as gallery-grid is not used directly here */
+    .visual-archive-section h2,
+    .highlight-images-section h2 { /* Apply font size to both new section titles */
+        font-size: 1.5rem;
+    }
+
+    .visual-archive-section .image-container {
+        min-height: 150px;
+        font-size: 1rem;
+    }
+
+    .highlight-image-item img {
+        height: 150px; /* Further adjust height for very small screens */
+    }
 }
