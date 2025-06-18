@@ -93,7 +93,7 @@ main {
     flex-grow: 1; /* Allows main content to take up remaining vertical space for sticky footer */
 }
 
-/* --- About Section Styles (Now styled like home page sections) --- */
+/* --- About Section Styles --- */
 .about-section {
     display: flex;
     flex-wrap: wrap;
@@ -202,7 +202,7 @@ main {
     object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
-/* --- General Section Styles (for other pages like index.html) --- */
+/* --- General Section Styles (for other pages like index.html and now my_works.html) --- */
 .intro {
     margin-top: 40px; /* Gap between header and "Welcome to My Blog" */
     margin-bottom: 30px;
@@ -210,9 +210,10 @@ main {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center; /* This will center the text within the .intro section */
 }
 
-/* NEW: Portfolio Projects Section Styles (replaces blog-preview) */
+/* Portfolio Projects Section Styles (applies to index.html and my_works.html) */
 .portfolio-preview {
     margin-bottom: 30px;
     padding: 20px;
@@ -251,71 +252,108 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid for images */
     gap: 10px; /* Space between images */
-    margin-bottom: 15px; /* Space below images before the link */
+    margin-bottom: 15px; /* Space below images before the link/button */
 }
 
 .project-images img {
     width: 100%;
-    height: 120px; /* Fixed height for thumbnails */
+    height: 300px; /* Increased height for project images */
     object-fit: cover; /* Ensures images cover the area without distortion */
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.project-link {
-    display: inline-block;
-    margin-top: 10px;
-    color: #0056b3;
+/* Styling for the "View Project Details" button on index.html */
+.project-link.btn-blue {
+    display: inline-block; /* Make it behave like a block for padding/margin but inline with text flow */
+    background-color: #0056b3; /* A nice blue color */
+    color: white;
+    padding: 10px 20px;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.project-link:hover {
-    text-decoration: underline;
-    color: #003366;
-}
-
-/* REMOVED: Old blog-preview specific styles */
-/*
-.blog-preview {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.blog-preview .post {
-    border: 1px solid #eee;
-    padding: 15px;
-    margin-top: 15px;
     border-radius: 5px;
-    background-color: #fcfcfc;
+    font-weight: bold; /* Make it bold */
+    margin-top: 15px; /* Add some space above */
+    transition: background-color 0.3s ease;
 }
 
-.blog-preview .post h4 {
-    margin-bottom: 5px;
-    color: #004080;
+.project-link.btn-blue:hover {
+    background-color: #004080; /* Darker blue on hover */
 }
 
-.blog-preview .post p {
-    font-size: 0.95rem;
-    color: #555;
+
+/* NEW: See More/See Less Button Styles (for my_works.html) */
+.project-toggle-btn {
+    background-color: #facc15; /* Yellow like your accent color */
+    color: #004080; /* Dark blue text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 15px; /* Space above the button */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* Allows margin-top/bottom and centers with text-align:center if parent is centered */
 }
 
-.blog-preview .post a {
-    display: inline-block;
-    margin-top: 10px;
+.project-toggle-btn:hover {
+    background-color: #e5b800; /* Slightly darker yellow on hover */
+    transform: translateY(-2px);
+}
+
+/* NEW: Hidden Project Details Section */
+.project-details {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #eee; /* Dotted line to separate */
+    text-align: left; /* Align text within details to left */
+    animation: fadeIn 0.5s ease-out; /* Smooth fade-in effect */
+}
+
+.project-details.hidden {
+    display: none;
+}
+
+.project-details h4 {
     color: #0056b3;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.project-details p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.project-details ul {
+    list-style: disc; /* Bullet points for lists */
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.project-details ul li {
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.download-list li a {
+    color: #0056b3; /* Blue for download links */
     text-decoration: none;
     font-weight: bold;
 }
 
-.blog-preview .post a:hover {
-    text-decoration: none;
+.download-list li a:hover {
+    text-decoration: underline;
 }
-*/
+
+/* NEW: Fade-in animation for project details */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 
 /* --- Footer Styles --- */
 footer {
@@ -369,6 +407,11 @@ footer {
     .project-images {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Smaller images on mobile */
     }
+
+    /* .my-works-section is now handled by .portfolio-preview and .intro */
+    .portfolio-preview {
+        padding: 20px 15px; /* Adjust padding for portfolio-preview on smaller screens */
+    }
 }
 
 @media (max-width: 480px) {
@@ -399,78 +442,15 @@ footer {
     .project-item h3 {
         font-size: 1.3rem;
     }
-}
 
-/* Styles for the new portfolio gallery (if you added it to index.html) */
-/* Note: The new .portfolio-preview and .project-item classes are serving a similar purpose to the old .portfolio-gallery and .gallery-item.
-   You might want to merge these or decide which naming convention you prefer and use consistently.
-   For now, I'm keeping .portfolio-gallery as a separate example, assuming it might be a different, dedicated gallery page or section.
-   If you intend for "Recent Projects" to *be* the gallery, you can remove .portfolio-gallery and its related styles. */
-
-.portfolio-gallery { /* This seems to be an old section or a duplicate idea, consider removing if .portfolio-preview is enough */
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.portfolio-gallery h3 {
-    margin-bottom: 25px;
-    color: #004080;
-    font-size: 2rem;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    justify-content: center;
-}
-
-.gallery-item {
-    background-color: #f9f9f9;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 200px; /* Adjust as needed for gallery thumbnails */
-    object-fit: cover;
-    display: block;
-    border-bottom: 1px solid #eee;
-}
-
-.gallery-item p {
-    padding: 15px 10px;
-    font-weight: bold;
-    color: #333;
-    font-size: 1.1rem;
-}
-
-.gallery-item a {
-    text-decoration: none; /* Remove underline from links */
-    color: inherit; /* Inherit color from parent */
-    display: block; /* Make the whole item clickable */
-}
-
-.gallery-item a:hover p {
-    color: #0056b3; /* Change text color on hover */
-}
-
-/* Responsive adjustments for gallery */
-@media (max-width: 600px) {
-    .gallery-grid {
-        grid-template-columns: 1fr; /* Stack items on small screens */
+    /* .my-works-section is now handled by .portfolio-preview and .intro */
+    .intro h2 {
+        font-size: 1.8rem;
     }
+
+    .intro p {
+        font-size: 1rem;
+    }
+
+    /* Responsive adjustments for gallery are no longer needed as gallery-grid is not used directly here */
 }
